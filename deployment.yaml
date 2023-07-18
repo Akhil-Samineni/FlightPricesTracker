@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akhil-kubernetes-metadata-flighttracker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: akhil-kubernetes-metadata-flighttracker
+  template:
+    metadata:
+      labels:
+        app: akhil-kubernetes-metadata-flighttracker
+    spec:
+      containers:
+        - name: akhil-kubernetes-container-flighttracker
+          image: akhilsamineni47/akhilflighttracker:latest
+          ports:
+            - containerPort: 80
